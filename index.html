@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Japan Trip Itinerary</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 0 20px 40px 20px;
       background: #f7f7f7;
       color: #333;
       line-height: 1.6;
     }
+    header {
+      width: 100%;
+      max-height: 250px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    header img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
     h1 {
       text-align: center;
       color: #2c3e50;
-      margin-top: 70px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      font-weight: 700;
     }
     h2 {
       color: #2c3e50;
@@ -52,11 +68,42 @@
       padding: 0;
     }
     li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .place-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .place-name {
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    button.copy-btn {
+      padding: 4px 8px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.1em;
+      line-height: 1;
+      user-select: none;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    button.copy-btn:hover {
+      background-color: #1f5d7d;
     }
     a {
       color: #2980b9;
       text-decoration: none;
+      word-break: break-word;
     }
     a:hover {
       text-decoration: underline;
@@ -64,6 +111,10 @@
   </style>
 </head>
 <body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Mount_Fuji_from_Hotel_Mt_Fuji_%282012%29.JPG" alt="Mount Fuji, Japan" />
+</header>
 
 <div class="nav">
   <a href="#highlights">Highlights</a>
@@ -83,21 +134,42 @@
 <div id="highlights" class="section">
   <h2>Trip Highlights</h2>
   <ul>
-    <li><a href="https://maps.app.goo.gl/SGgJNsJrhxWz2M3p9" target="_blank">TeamLabs Museum</a> – Tokyo</li>
-    <li><a href="https://maps.app.goo.gl/Yc2FYvbL8jQbpvVZ8" target="_blank">The Emperor’s Palace</a> – Tokyo</li>
-    <li><a href="https://maps.app.goo.gl/sXhn9RPZtxoB8QJW7" target="_blank">Ryugu Sea Cave</a> – Izu Peninsula</li>
-    <li><a href="https://www.usj.co.jp/e/" target="_blank">Universal Studios Japan</a> – Osaka</li>
-    <li><a href="https://bridgeworld.jp/en/" target="_blank">Akashi Kaikyo Bridge Experience</a> – Kobe</li>
-    <li><a href="https://www.ghibli-museum.jp/en/" target="_blank">Studio Ghibli Museum</a> – Tokyo</li>
-    <li>Snorkelling & Coral Reefs – Okinawa</li>
+    <li class="place-item">
+      <span class="place-name">TeamLabs Museum</span> – Tokyo (<a href="https://www.teamlab.art/e/planets/" target="_blank" rel="noopener">https://www.teamlab.art/e/planets/</a>)
+      <button class="copy-btn" aria-label="Copy TeamLabs Museum name">📋</button>
+    </li>
+    <li class="place-item">
+      <span class="place-name">The Emperor’s Palace</span> – Tokyo (<a href="https://www.kunaicho.go.jp/eindex.html" target="_blank" rel="noopener">https://www.kunaicho.go.jp/eindex.html</a>)
+      <button class="copy-btn" aria-label="Copy The Emperor’s Palace name">📋</button>
+    </li>
+    <li class="place-item">
+      <span class="place-name">Ryugu Sea Cave</span> – Izu Peninsula
+      <button class="copy-btn" aria-label="Copy Ryugu Sea Cave name">📋</button>
+    </li>
+    <li class="place-item">
+      <span class="place-name">Universal Studios Japan</span> – Osaka (<a href="https://www.usj.co.jp/e/" target="_blank" rel="noopener">https://www.usj.co.jp/e/</a>)
+      <button class="copy-btn" aria-label="Copy Universal Studios Japan name">📋</button>
+    </li>
+    <li class="place-item">
+      <span class="place-name">Akashi Kaikyo Bridge Experience</span> – Kobe (<a href="https://bridgeworld.jp/en/" target="_blank" rel="noopener">https://bridgeworld.jp/en/</a>)
+      <button class="copy-btn" aria-label="Copy Akashi Kaikyo Bridge Experience name">📋</button>
+    </li>
+    <li class="place-item">
+      <span class="place-name">Studio Ghibli Museum</span> – Tokyo (<a href="https://www.ghibli-museum.jp/en/" target="_blank" rel="noopener">https://www.ghibli-museum.jp/en/</a>)
+      <button class="copy-btn" aria-label="Copy Studio Ghibli Museum name">📋</button>
+    </li>
+    <li class="place-item">
+      <span class="place-name">Snorkelling & Coral Reefs</span> – Okinawa
+      <button class="copy-btn" aria-label="Copy Snorkelling & Coral Reefs name">📋</button>
+    </li>
   </ul>
 </div>
 
 <div id="day1" class="section">
   <h2>Day 1 – Arrival in Tokyo</h2>
   <ul>
-    <li><strong>Flight:</strong> Morning flight to Tokyo, arrive afternoon.</li>
-    <li>Transfer: Narita Airport → <a href="https://maps.app.goo.gl/tkzKK6eMtdgZPBVX6" target="_blank">Hotel 201 (Stone Hotel)</a></li>
+    <li>Flight: Morning flight to Tokyo, arrive afternoon.</li>
+    <li>Transfer: Narita Airport → Hotel 201 (Stone Hotel)</li>
     <li>Train: Keisei Narita Line → Asakusa; Toei Asakusa Line → Asakusabashi.</li>
   </ul>
 </div>
@@ -105,12 +177,21 @@
 <div id="day2" class="section">
   <h2>Day 2 – Tokyo Highlights</h2>
   <ul>
-    <li><a href="https://maps.app.goo.gl/SGgJNsJrhxWz2M3p9" target="_blank">TeamLabs Museum</a></li>
-    <li><a href="https://maps.app.goo.gl/Yc2FYvbL8jQbpvVZ8" target="_blank">The Emperor’s Palace</a></li>
-    <li><a href="https://maps.app.goo.gl/kHkz8TqpVFr1C1bE8" target="_blank">Anamori Inari Shrine</a></li>
-    <li><a href="https://maps.app.goo.gl/kZkUfLG6UUM3fjs59" target="_blank">Akihabara District</a> – Warhammer Café, Hedgehog Café</li>
-    <li><a href="https://www.miraikan.jst.go.jp/en/" target="_blank">Miraikan Museum</a></li>
-    <li>Tea/Judayia Experience & <a href="https://maps.app.goo.gl/V3iKN6i8GziDhsZD9" target="_blank">Harajuku District</a></li>
+    <li class="place-item">
+      <span class="place-name">TeamLabs Museum</span> – Tokyo (<a href="https://www.teamlab.art/e/planets/" target="_blank" rel="noopener">https://www.teamlab.art/e/planets/</a>)
+      <button class="copy-btn" aria-label="Copy TeamLabs Museum name">📋</button>
+    </li>
+    <li class="place-item">
+      <span class="place-name">The Emperor’s Palace</span> – Tokyo (<a href="https://www.kunaicho.go.jp/eindex.html" target="_blank" rel="noopener">https://www.kunaicho.go.jp/eindex.html</a>)
+      <button class="copy-btn" aria-label="Copy The Emperor’s Palace name">📋</button>
+    </li>
+    <li>Anamori Inari Shrine – Tokyo</li>
+    <li>Akihabara District – Warhammer Café, Hedgehog Café</li>
+    <li class="place-item">
+      <span class="place-name">Miraikan Museum</span> – Tokyo (<a href="https://www.miraikan.jst.go.jp/en/" target="_blank" rel="noopener">https://www.miraikan.jst.go.jp/en/</a>)
+      <button class="copy-btn" aria-label="Copy Miraikan Museum name">📋</button>
+    </li>
+    <li>Judayia Experience & Harajuku District – Tokyo</li>
   </ul>
 </div>
 
@@ -118,27 +199,33 @@
   <h2>Day 3–5: Tokyo Exploration</h2>
   <ul>
     <li>Free days to explore Tokyo and nearby attractions.</li>
-    <li>Day 5: Check out of <a href="https://maps.app.goo.gl/tkzKK6eMtdgZPBVX6" target="_blank">Hotel 201</a>, travel to Shizuoka (~5 hours).</li>
-    <li>Check in: <a href="https://maps.app.goo.gl/xV6j3M1kcy2P3Q5c8" target="_blank">Izu Imaihama Tokyo Hotel</a></li>
+    <li>Day 5: Check out of Hotel 201, travel to Shizuoka (~5 hours).</li>
+    <li>Check in: Izu Imaihama Tokyo Hotel</li>
   </ul>
 </div>
 
 <div id="day6" class="section">
   <h2>Day 6–8: Shizuoka & Izu Peninsula</h2>
   <ul>
-    <li><a href="https://maps.app.goo.gl/sXhn9RPZtxoB8QJW7" target="_blank">Ryugu Sea Cave</a>, Izu Peninsula, Irozaki & Jogasaki Coasts</li>
-    <li><a href="https://maps.app.goo.gl/FKXZ3LBmGX1fD1Pc9" target="_blank">Kawazu Seven Waterfalls</a>, <a href="https://maps.app.goo.gl/Bap2ApVv76yeq8w38" target="_blank">Toi Kinzan Gold Mine</a>, Atami Castle</li>
+    <li class="place-item">
+      <span class="place-name">Ryugu Sea Cave</span>, Izu Peninsula, Irozaki & Jogasaki Coasts
+      <button class="copy-btn" aria-label="Copy Ryugu Sea Cave name">📋</button>
+    </li>
+    <li>Kawazu Seven Waterfalls, Toi Kinzan Gold Mine, Atami Castle</li>
     <li>Izu Shaboten Zoo, Nirayama Furnace, Kiunkaku Former Ryokan</li>
     <li>Shirahama Beach & Dogashima</li>
-    <li>Day 8: Travel to Osaka (~5–6 hours). Check in: <a href="https://maps.app.goo.gl/sCM6DYo8fArhsx7G9" target="_blank">Hotel Monterey Le Frere Osaka</a></li>
+    <li>Day 8: Travel to Osaka (~5–6 hours). Check in: Hotel Monterey Le Frere Osaka</li>
   </ul>
 </div>
 
 <div id="day9" class="section">
   <h2>Day 9 – Osaka Highlights</h2>
   <ul>
-    <li><a href="https://bridgeworld.jp/en/" target="_blank">Akashi Kaikyo Bridge Tower Experience</a> (2h 40m, pledge form & ID required)</li>
-    <li><a href="https://maps.app.goo.gl/kGeArpEZ3sTGqkhh6" target="_blank">Naoshima Island</a>, <a href="https://www.usj.co.jp/e/" target="_blank">Universal Studios Japan</a>, <a href="https://maps.app.goo.gl/1rGxE9R82azHw9US9" target="_blank">Dotonbori</a></li>
+    <li class="place-item">
+      <span class="place-name">Akashi Kaikyo Bridge Tower Experience</span> (2h 40m, pledge form & ID required) (<a href="https://bridgeworld.jp/en/" target="_blank" rel="noopener">https://bridgeworld.jp/en/</a>)
+      <button class="copy-btn" aria-label="Copy Akashi Kaikyo Bridge Tower Experience name">📋</button>
+    </li>
+    <li>Naoshima Island, Universal Studios Japan, Dotonbori (<a href="https://www.usj.co.jp/e/" target="_blank" rel="noopener">https://www.usj.co.jp/e/</a>)</li>
   </ul>
 </div>
 
@@ -153,25 +240,48 @@
   <h2>Day 12 – Transfer to Okinawa</h2>
   <ul>
     <li>Flight: Osaka → Okinawa, afternoon arrival.</li>
-    <li>Check in: <a href="https://maps.app.goo.gl/igV5H82M63KPhFtR7" target="_blank">Lacer Okinawa Naha Tomariport</a></li>
+    <li>Check in: Lacer Okinawa Naha Tomariport</li>
   </ul>
 </div>
 
 <div id="day13" class="section">
   <h2>Day 13–15: Okinawa Adventures</h2>
   <ul>
-    <li>Snorkelling, Dark Sky Sanctuary, <a href="https://maps.app.goo.gl/9QU4ngTZG1vtePu87" target="_blank">Gyokusendo Cave</a>, Nakijin-Jo & Zakimi-Jo Sites, coral reefs.</li>
-    <li>Day 15: Flight back to Tokyo, check in: <a href="https://maps.app.goo.gl/FJxZnPMnpJ5dV4q97" target="_blank">Hotel Mystays Premier Narita</a></li>
+    <li>Snorkelling, Dark Sky Sanctuary, Gyokusendo Cave, Nakijin-Jo & Zakimi-Jo Sites, coral reefs.</li>
+    <li>Day 15: Flight back to Tokyo, check in: Hotel Mystays Premier Narita</li>
   </ul>
 </div>
 
 <div id="day16" class="section">
   <h2>Day 16 – Return to Melbourne</h2>
   <ul>
-    <li><a href="https://www.ghibli-museum.jp/en/" target="_blank">Studio Ghibli Museum</a></li>
+    <li class="place-item">
+      <span class="place-name">Studio Ghibli Museum</span> (<a href="https://www.ghibli-museum.jp/en/" target="_blank" rel="noopener">https://www.ghibli-museum.jp/en/</a>)
+      <button class="copy-btn" aria-label="Copy Studio Ghibli Museum name">📋</button>
+    </li>
     <li>Evening flight: Tokyo → Melbourne (arrive next morning).</li>
   </ul>
 </div>
+
+<script>
+  // Copy button functionality copies only the place name text inside the same list item
+  document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const listItem = button.closest('li');
+      if (!listItem) return;
+      const placeNameElem = listItem.querySelector('.place-name');
+      if (!placeNameElem) return;
+      const textToCopy = placeNameElem.textContent.trim();
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        button.textContent = '✅'; // success icon
+        setTimeout(() => button.textContent = '📋', 1500);
+      }).catch(() => {
+        alert('Copy failed. Please copy manually.');
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
